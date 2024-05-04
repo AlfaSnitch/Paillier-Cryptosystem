@@ -87,7 +87,7 @@ void keygeneration(cpp_int p,cpp_int q,cpp_int& n,cpp_int& g,cpp_int& lamda, cpp
     miu = modInverse(t1,n);
 
     cout<<"Key generation successful \n"<<endl;
-    cout<<"Public Key(n,g): "<<n<<endl<<g<<endl<<endl;
+    cout<<"Public Key(n,g): "<<endl<<n<<endl<<g<<endl<<endl;
     cout<<"Private key(lamda,miu): "<<endl<<lamda<<endl<<miu<<endl<<endl;
 }
 // for encryption
@@ -102,6 +102,7 @@ cpp_int encryption(cpp_int m,cpp_int g, cpp_int n){
     cpp_int t1 = power(g,m,n*n);
     cpp_int t2 = power(r,n,n*n);
     cpp_int cipher_text = t1*t2 % (n*n);
+    cout<<"Encrypted Message: "<<endl<<cipher_text<<endl<<endl;
     return cipher_text;
 }
 
@@ -125,12 +126,16 @@ int main()
     //key generation
     keygeneration(p,q,n,g,lamda,miu);
 
-    //encryption
+    //original message
     cpp_int m = 123;
+
+    //encryption
     cpp_int ci = encryption(m, g, n);
 
     //decryption
-    decryption(ci,lamda,miu,n);
+    cpp_int dect = decryption(ci,lamda,miu,n);
+
+    if(dect == m) cout<<"Encryption and decryption were successful!"<<endl;
 
     return 0;
 }
