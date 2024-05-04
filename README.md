@@ -5,4 +5,4 @@ Prerequirements:
 
 Output:
 
-![image_2024-05-04_191940893](https://github.com/AlfaSnitch/Paillier-Cryptosystem/assets/113677202/5b2ffbac-c1d3-4d72-a074-c41d28c21629)
+![image_2024-05-04_193139540](https://github.com/AlfaSnitch/Paillier-Cryptosystem/assets/113677202/9a32455d-35f7-4c69-8df4-672469da4d7b)
